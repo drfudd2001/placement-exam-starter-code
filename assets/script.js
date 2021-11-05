@@ -1,23 +1,57 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
-
-// We'll use these variables to track the counts of each cookie type
-let gb = 0      // Gingerbread
-let cc = 0      // Chocolate Chip
-let sugar = 0   // Sugar Sprinkle
-
-// Code to update name display 
+let yourName = "Elmer Figueroa-Garcia"
+let gb = 0
+let cc = 0
+let sugar = 0
 document.getElementById('credit').textContent = `Created by ${yourName}`
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
-document.getElementById('add-gb').addEventListener('click', function() {
-    // HINT: You can delete this console.log after you no longer need it!
-    console.log('Gingerbread + button was clicked!')
-
-    // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+document.addEventListener('DOMContentLoaded', function(){
+    const gbAdd = document.querySelector('#add-gb');
+    const gbSub = document.querySelector('#minus-gb');
+    const ccAdd = document.querySelector('#add-cc');
+    const ccSub = document.querySelector('#minus-cc');
+    const sugarAdd = document.querySelector('#add-sugar');
+    const sugarSub = document.querySelector('#minus-sugar');
+    const gbDisp = document.querySelector('#qty-gb');
+    const ccDisp = document.querySelector('#qty-cc');
+    const sugarDisp = document.querySelector('#qty-sugar');
+    const totalDisp = document.querySelector('#qty-total');
+    function changeTotalCookies(){
+        totalCookies = gb + cc + sugar;
+        totalDisp.textContent = totalCookies;
+    }
+    gbAdd.addEventListener('click', function(){
+        gb++;
+        gbDisp.textContent = gb;
+        changeTotalCookies();
+    });
+    gbSub.addEventListener('click', function(){
+        if (gb > 0){
+            gb--;
+            gbDisp.textContent = gb;
+            changeTotalCookies();
+        }
+    });
+    ccAdd.addEventListener('click', function(){
+        cc++;
+        ccDisp.textContent = cc;
+        changeTotalCookies();
+    });
+    ccSub.addEventListener('click', function(){
+        if (cc > 0){
+            cc--;
+            ccDisp.textContent = cc;
+            changeTotalCookies();
+        }
+    });
+    sugarAdd.addEventListener('click', function(){
+        sugar++;
+        sugarDisp.textContent = sugar;
+        changeTotalCookies();
+    });
+    sugarSub.addEventListener('click', function(){
+        if (sugar > 0){
+            sugar--;
+            sugarDisp.textContent = sugar;
+            changeTotalCookies();
+        }
+    });
 })
-
-// TODO: Hook up event listeners for the rest of the buttons
