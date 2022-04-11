@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function(){
     const gbSub = document.querySelector('#minus-gb');
     const ccAdd = document.querySelector('#add-cc');
     const ccSub = document.querySelector('#minus-cc');
-    const ssAdd = document.querySelector('#add-sugar');
-    const ssSub = document.querySelector('#minus-sugar');
+    const sugarAdd = document.querySelector('#add-sugar');
+    const sugarSub = document.querySelector('#minus-sugar');
     const gbDisp = document.querySelector('#qty-gb');
     const ccDisp = document.querySelector('#qty-cc');
-    const ssDisp = document.querySelector('#qty-sugar');
+    const sugarDisp = document.querySelector('#qty-sugar');
     const totalDisp = document.querySelector('#qty-total');
     function changeTotalCookies(){
         totalCookies = gb + cc + sugar;
@@ -42,15 +42,15 @@ document.addEventListener('DOMContentLoaded', function(){
             changeTotalCookies();
         }
     });
-    ssAdd.addEventListener('click', function(){
+    sugarAdd.addEventListener('click', function(){
         sugar++;
-        ssDisp.textContent = sugar;
+        sugarDisp.textContent = sugar;
         changeTotalCookies();
     });
-    ssSub.addEventListener('click', function(){
+    sugarSub.addEventListener('click', function(){
         if (sugar > 0){
             sugar--;
-            ssDisp.textContent = sugar;
+            sugarDisp.textContent = sugar;
             changeTotalCookies();
         }
     });
